@@ -11,7 +11,7 @@ public class Main {
 		PICalc.Output result = p.calc();
 		
 		
-		System.out.println("Total Number of Points:" + result.);
+		System.out.println("Total Number of Points:" );
 		System.out.println("Points within circle:");
 		System.out.println("Pi estimation");
 	}
