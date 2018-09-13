@@ -10,7 +10,6 @@ public class Main {
 		reader = new Scanner(System.in);
 		
 		int total = reader.nextInt();
-		PICalc p = new PICalc();
 		System.out.println("Total Number of Points: " + total);
 		//System.out.println("Points within circle:" + PICalc.inside(x, y));
 		double PI =  PICalc.calcPI(total);
