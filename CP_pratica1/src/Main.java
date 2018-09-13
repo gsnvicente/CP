@@ -1,19 +1,21 @@
-
+import java.util.Scanner;
 
 public class Main {
 
+	private static Scanner reader;
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+	
+		reader = new Scanner(System.in);
 		
-		int n = Integer.parseInt(args[0]);
-		PICalc p = new PICalc(n);
-		PICalc.Output result = p.calc();
+		int total = reader.nextInt();
+		PICalc p = new PICalc();
+		System.out.println("Total Number of Points: " + total);
+		//System.out.println("Points within circle:" + PICalc.inside(x, y));
+		double PI =  PICalc.calcPI(total);
+		System.out.println("Pi estimation: " + PI);
 		
-		
-		System.out.println("Total Number of Points:" );
-		System.out.println("Points within circle:");
-		System.out.println("Pi estimation");
 	}
 
 }

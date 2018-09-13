@@ -4,11 +4,11 @@ public class PICalc {
 
 	private int simulationNumber;
 	
-	public PICalc(int simulationNumber){
-		this.simulationNumber = simulationNumber;
+	public PICalc(){
+		
 	}
 	
-	class Output{
+	/*class Output{
 		
 		private int total;
 		private int pointsIn;
@@ -19,27 +19,37 @@ public class PICalc {
 			this.pointsIn = pointsIn;
 			this.pi = pi;
 		}
+	}*/
+	
+	public static boolean isInside (double x, double y){
+		double h = Math.sqrt(x * x + y * y);
+		if(h<1) {
+		}
+			return (h<1);
 	}
 	
 	
-	
-	
-	public Output calc(){
+	public static double calcPI( int total){
+		
 		Random r = new Random();
-		int in = 0;
+		int insidePoints = 0;
+		double PI = 0;
 		
 		for( int i = 0; i < total; i++){
-			double x = r.nextDouble();
-			double y = r.nextDouble();
+			double x = (r.nextDouble()) *2-1.0;
+			double y = (r.nextDouble())*2-1.0;
 			
-			double h = Math.sqrt(x * x + y * y);
+			//double h = Math.sqrt(x * x + y * y);
 			
-			if (h <= 1){
-				in++;
+			if (isInside(x,y)) {
+				insidePoints++;
 			}
-		}
 		
-		double totalDouble = (double)total;
-		duble pi = in*4/totalDouble;
+			PI = (4*((double)insidePoints/(double)total));
+			
+			
+		}
+		return PI;		
 	}
+	
 }
